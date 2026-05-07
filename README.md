@@ -1,5 +1,32 @@
-# Wack-A-Mole-team-project
-As a group we are working on making a wack-a-mole game
+# Wack-A-Mole Project
+>The objective of this project is to design and develop a small wack-a-mole style feature-complete prototype game on unity that simulates the classic core mechanic of wacking for  points. The game will also integrate essential gameplay systems such as player movement, camera control, dialogue interactions, menus, and a basic saving/loading system.
+### Team Members
+1. Sophie as the director and author
+2. Tylor as the core game developer
+3. Lacklan as the GUI/UI and HUD developer
+### Branching Naming Conventions
+When working with GitHub, using consistent naming conventions for branches can improve collaboration and maintain clarity in your version control workflow. Here are some commonly followed naming conventions for branches:
+
+### Feature Branch
+Format: - feature/{feature-name}
+Example: - feature/user-authentication
+
+### Bugfix Branches
+Format: - bugfix/{bug-description}
+Example: - bugfix/fix-login-error
+
+### Release Branches
+Format: - release/{version-number}
+Example: - release/v1.2.0
+
+### Commit names
+**Every <ins>github commit</ins> should start with one of the following words:**
+
+1. Modification: when a new code is added or removed. Designate the file and the purpose of the modification.
+2. Fix: when a specific bug is fixed.
+3. File change: if files are added or removed.
+4. Refactor: improved code without changing its behaviour
+5. UI: Add or modify UI Elements
 
 ## Features
 
