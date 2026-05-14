@@ -77,11 +77,11 @@ Example: - release/v1.2.0
 | Feature | Priority | Team Member | Order | Order Reason |
 |---------|----------|-------------|-------|--------------|
 |Main Menu                   | Medium | Lachlan Butler |   1   | Needs main menu to start the game |
-|Player click and Hit Detection| High | Tylor Dharma-Trumps |   2   | Required for main game functions to proceed |
-|Score System                  | High | Tylor Dharma-Trumps |   3   | Needed to test that player click gives point for point system |
-|High Score Save and Load    | Medium | Lachlan Butler |   4   | Needed for saving your highest score from anytime played |
-|Mole Pop-Up System            | High | Tylor Dharma-Trumps |   5   | Getting the main gameplay of the game done is important so there is a game to show |
-|Countdown Timer             | Medium | Sophie Sear      |   6   | A lose condition is required so the game has a way to end so that the player has to be challenged |
-|Game Over Screen and Restart| Medium | Lachlan Butler |   7   | Required after the lose condition is implemented to allow the player to return to the main menu |
-|Hole Grid Layout and Visual Feedback| Low | Sophie Sear |   8   | Required before the game is finished production for feedback on how the game is designed |
-|Difficulty Scaling          | Low    | Sophie Sear      |   9   | This is only required after the game is fully accomplished so that everything works correctly when difficulty is added in |
+|Mole Pop-Up System            | High | Tylor Dharma-Trumps |   2   | Getting the main gameplay of the game done is important so there is a game to show |
+|Hole Grid Layout and Visual Feedback| Low | Sophie Sear & Kurtis |   3   | Required before the game is finished production for feedback on how the game is designed |
+|Game Over Screen and Restart| Medium | Lachlan Butler |   4   | Required after the lose condition is implemented to allow the player to return to the main menu |
+|Player click and Hit Detection| High | Tylor Dharma-Trumps |   5   | Required for main game functions to proceed |
+|Countdown Timer             | Medium | Sophie Sear & Kurtis   |   6   | A lose condition is required so the game has a way to end so that the player has to be challenged |
+|High Score Save and Load    | Medium | Lachlan Butler |   7   | Needed for saving your highest score from anytime played |
+|Score System                  | High | Tylor Dharma-Trumps |   8   | Needed to test that player click gives point for point system |
+|Difficulty Scaling          | Low    | Sophie Sear & Kurtis    |   9   | This is only required after the game is fully accomplished so that everything works correctly when difficulty is added in |
