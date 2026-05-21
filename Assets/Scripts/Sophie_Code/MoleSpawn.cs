@@ -12,8 +12,11 @@ public class MoleSpawn : MonoBehaviour
     public GameObject molePrefab;
     public Manager manager;
 
+
+    
+
     // On Game start (bool?) start function.
-    private void Start()
+    private void Awake()
     {
         Spawn();
         // spawn 9 moles
@@ -32,9 +35,10 @@ public class MoleSpawn : MonoBehaviour
         }
         manager.moles = moles;
     }
- 
-
    
 
-    
+
+
+
+
 }

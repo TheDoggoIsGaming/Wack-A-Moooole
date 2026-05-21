@@ -1,24 +1,26 @@
+
 using UnityEngine;
+
 
 public class Manager : MonoBehaviour
 {
+    public static Manager instance;
     public GameObject[] moles;
-    public int randomMole;
+    [SerializeField] int randomIndexValue;
     // left mouse click yellow mole = hit flashes green before turning back to base 
 
     // Clicking a mole that isnt yellow = miss flashes red before turning back to base
-    public Mole ToggleIsActive;
 
-    
+    public void Start()
+    {
+        RandomMole();
+    }
 
     void RandomMole()
     {
-        
-       
-       int randomMole = Random.Range(0, moles.Length);
-       
-
-
+        randomIndexValue = Random.Range(0, moles.Length);
+        moles[randomIndexValue].GetComponent<Mole>().ToggleIsActive();
     }
+
 
 }

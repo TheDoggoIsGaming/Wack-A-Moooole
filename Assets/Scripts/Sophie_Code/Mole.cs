@@ -19,9 +19,22 @@ public class Mole : MonoBehaviour
     public void ToggleIsActive()
     {
         //There are two states of being that these moles can be. 
-        isActive = !isActive; 
+        isActive = !isActive;
+        IsActive();
+    }  
+
+    public void SetActive()
+    {
+        isActive = true;
+        IsActive();
     }
-    public bool IsActive()
+    public void SetInActive()
+    {
+        isActive = false;
+        IsActive();
+    }
+
+    bool IsActive()
     {
         // when the mole is active change the colour to the active colour
         if (isActive)
