@@ -1,44 +1,54 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MoleSpawn : MonoBehaviour
+namespace Sophie
 {
-    // Announce Prefab Mole 
-    public GameObject[] moles;
-      
-    // Announce MoleGrid?
-    public GameObject moleGrid;
-    public int numberOfMoles = 9;
-    public GameObject molePrefab;
-    public Manager manager;
-
-
-    
-
-    // On Game start (bool?) start function.
-    private void Awake()
+    public class MoleSpawn : MonoBehaviour
     {
-        Spawn();
-        // spawn 9 moles
-        // Randomly activate a mole (turn yellow)
-    }
+        // Announce Prefab Mole 
+        public GameObject[] moles;
 
-    void Spawn ()
-    {
-        //Spawn moles acording to an established number 9 for now 
-        moles = new GameObject[numberOfMoles];
-        //If existing array clear and make new 
-        for (int i = 0; i < numberOfMoles; i++)
-        {//spawn
-            GameObject spawnedMole = Instantiate(molePrefab, moleGrid.transform);
-            moles[i] = spawnedMole;
+        // Announce MoleGrid?
+        public GameObject moleGrid;
+        //Announce the public int to know how many moles to spawn 
+        public int numberOfMoles = 9;
+        //Referencing the mole prefab
+        public GameObject molePrefab;
+        //Reference to the manager sript 
+        public Manager manager;
+
+
+
+
+        // On Game start (bool?) start function.
+        private void Awake()
+        {
+            //Do as early as they can when game begins
+            Spawn();
+
         }
-        manager.moles = moles;
+
+        void Spawn()
+        {
+            //Spawn moles acording to an established number 9 for now 
+            moles = new GameObject[numberOfMoles];
+            //If existing array clear and make new 
+            for (int i = 0; i < numberOfMoles; i++)
+            {
+                // This is to repeatedly spawn the mole prefab into the grid 
+                GameObject spawnedMole = Instantiate(molePrefab, moleGrid.transform);
+                // Every mole is a spawned mole. 
+                moles[i] = spawnedMole;
+            }
+            manager.moles = moles;
+        }
+
+
+
+
+
+
     }
-   
-
-
-
-
-
 }
+
+
