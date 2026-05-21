@@ -1,9 +1,10 @@
 # Wack-A-Mole Project
 >The objective of this project is to design and develop a small wack-a-mole style feature-complete prototype game on unity that simulates the classic core mechanic of wacking for  points. The game will also integrate essential gameplay systems such as player movement, camera control, dialogue interactions, menus, and a basic saving/loading system.
 ### Team Members
-1. Sophie as the director and author
-2. Tylor as the core game developer
-3. Lacklan as the GUI/UI and HUD developer
+1. Sophie as the director and author.
+2. Tylor as the core game developer.
+3. Lacklan as the GUI/UI and HUD developer.
+4. Kurtis as the technical developer.
 ### Branching Naming Conventions
 When working with GitHub, using consistent naming conventions for branches can improve collaboration and maintain clarity in your version control workflow. Here are some commonly followed naming conventions for branches:
 
