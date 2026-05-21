@@ -54,21 +54,24 @@ namespace Sophie
                 return false;
             }
         }
-        public bool IsHit()
+        public void IsHit()
         {
             if (!isActive)
             {
                 //If it is hit while inactive colour changes to the miss color
                 uiImage.color = missColour;
-                return true;
             }
             else
             {
                 // if it is hit while active color changes to the hit color
                 uiImage.color = hitColour;
-                return false;
             }
 
+        }
+        public void Missed()
+        {
+
+            uiImage.color = missColour;
         }
     }
 
