@@ -8,13 +8,17 @@
 ### Branching Naming Conventions
 When working with GitHub, using consistent naming conventions for branches can improve collaboration and maintain clarity in your version control workflow. Here are some commonly followed naming conventions for branches:
 
-### Developer Branch
-Format - developer/{developer-name}
-Example - developer/Pop-up-System
-
 ### Feature Branch
 Format: - feature/{feature-name}
 Example: - feature/user-authentication
+
+### Merge Branch
+Format - testmerge/{feature-name}
+Example - testmerge/Login-System
+
+### Developer Branch
+Format - developer/{developer-name}
+Example - developer/Pop-up-System
 
 ### Bugfix Branches
 Format: - bugfix/{bug-description}
