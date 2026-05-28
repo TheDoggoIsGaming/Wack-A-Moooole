@@ -32,9 +32,9 @@ namespace Sophie
             //if the current number is equal or less than 0 Do;
             if(currentNumber <= 0 )
             {
-                //Current nuber equals zero
+                //Current number equals zero, so if the current number would be less then 0 it stays at zero.
                 currentNumber = 0;
-                //End Game(not possible as of now. 
+                //End Game(not possible as of now). To be added with the addition of an end game screen. 
 
             }
             // minutes is equal to currentNumber divided by 60
