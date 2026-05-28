@@ -16,8 +16,23 @@ namespace Sophie
         // When a mole is not active it is white
         public Color inActiveColour = Color.white;
         //Sets the base of the moles as not active 
-        private bool isActive = false;
+        public bool isActive = false;
+        public float activeTime = 2f;
+        public float timer;
 
+
+        private void Update()
+        {
+            if(isActive)
+            {
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    SetInActive();
+                    timer = activeTime;
+                }
+            }
+        }
         public void ToggleIsActive()
         {
             //There are two states of being that these moles can be. 
@@ -43,7 +58,7 @@ namespace Sophie
             // when the mole is active change the colour to the active colour
             if (isActive)
             {
-                //
+                timer = activeTime;
                 uiImage.color = activeColour;
                 return true;
             }
@@ -65,8 +80,14 @@ namespace Sophie
             {
                 // if it is hit while active color changes to the hit color
                 uiImage.color = hitColour;
+                isActive = false;
+                timer = activeTime;
             }
 
+        }
+        public void Reinforcements()
+        {
+            
         }
         public void Missed()
         {
