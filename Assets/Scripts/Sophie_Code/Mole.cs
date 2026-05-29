@@ -85,10 +85,6 @@ namespace Sophie
             }
 
         }
-        public void Reinforcements()
-        {
-            
-        }
         public void Missed()
         {
 

@@ -1,5 +1,6 @@
-
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace Sophie
@@ -11,6 +12,7 @@ namespace Sophie
         public GameObject[] moles;
         // To see the random value within the inspecter
         [SerializeField] int randomIndexValue;
+        public GameObject scoreText;
 
         public float timer;
         // left mouse click yellow mole = hit flashes green before turning back to base 
@@ -36,6 +38,7 @@ namespace Sophie
             // Selects a random mole to pop up and if the player clicks on the mole then it will flash green and if the player misses the mole it will flash red.
             if (moles[randomIndexValue].GetComponent<Mole>().isActive == false)
             {
+
                 // currently it changes colour at a certain time but it needs to change colour when the player clicks or misses the mole.
                 timer += Time.deltaTime;
                 if(timer >= 1f)
