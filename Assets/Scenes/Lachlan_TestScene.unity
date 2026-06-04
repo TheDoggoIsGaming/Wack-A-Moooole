@@ -439,7 +439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &294576771
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1558,7 +1558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &873424434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2267,14 +2267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758d36fd6d85c184cbbc41c0e9d2f566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIHandler
-  currentState: 0
-  globalSpeed: 1
-  menuPanels:
-  - {fileID: 294576770}
-  - {fileID: 873424433}
-  - {fileID: 1575270137}
-  score: 20
-  scoreText: {fileID: 780299479}
 --- !u!1 &1422315100
 GameObject:
   m_ObjectHideFlags: 0
