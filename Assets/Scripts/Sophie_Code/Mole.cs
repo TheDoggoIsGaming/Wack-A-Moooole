@@ -18,18 +18,28 @@ namespace Sophie
         //Sets the base of the moles as not active 
         public bool isActive = false;
         //When the mole is idle for a certain time it changes location.
-        public float activeTime = 2f;
-        public float timer;
+        public int activeTime = 3;
+        public float timer = 0;
+        public bool hit = true;
+        public bool missed = false;
 
         // after a certain time the mole will appear somewhere else.
         private void Update()
         {
+            //
             if(isActive)
             {
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
-                    SetInActive();
+                    if (!hit)
+                    {
+                        Missed();
+                    } 
+                }
+                if (timer <= -1)
+                {
+                    SetActive();
                     timer = activeTime;
                 }
             }
@@ -51,6 +61,8 @@ namespace Sophie
         {
             // When this function is called, set inactive 
             isActive = false;
+            hit = false;
+            missed = false;
             IsActive();
         }
 
@@ -59,11 +71,6 @@ namespace Sophie
             // when the mole is active change the colour to the active colour
             if (isActive)
             {
-                timer = activeTime;
-                if (activeTime > 0)
-                {
-                    uiImage.color = activeColour;
-                }
                 uiImage.color = activeColour;
                 return true;
             }
@@ -80,24 +87,26 @@ namespace Sophie
             {
                 //If it is hit while inactive colour changes to the miss color
                 uiImage.color = missColour;
-                Manager.instance.ScoreDown();
-
+                Manager.instance.ScoreDown(1);
+               
             }
-            else
+            else if(isActive && !missed)
             {
                 // if it is hit while active color changes to the hit color
                 uiImage.color = hitColour;
-                //Score go up
-                Manager.instance.ScoreUp();
+                //Score go up when clicked
+                Manager.instance.ScoreUp(1);
                 isActive = false;
                 timer = activeTime;
+                hit = true;
             }
 
         }
         public void Missed()
         {
-
+            missed = true;
             uiImage.color = missColour;
+            Manager.instance.ScoreDown(1);
         }
     }
 

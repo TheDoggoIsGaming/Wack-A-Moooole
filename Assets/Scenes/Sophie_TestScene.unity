@@ -564,12 +564,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a13465cd8749043be189e996a07067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Manager
-  MoleScript: {fileID: 0}
+  Mole: {fileID: 0}
   moles: []
-  randomIndexValue: 0
+  randomIndexValue: 1
   scoreText: {fileID: 1673317085}
   score: 0
-  timer: 0
+  timer: 1
 --- !u!1 &1673317083
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 0000000000000000000000000000000000'
+  m_Text: 'Score: '
 --- !u!222 &1673317086
 CanvasRenderer:
   m_ObjectHideFlags: 0
