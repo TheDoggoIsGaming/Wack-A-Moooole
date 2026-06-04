@@ -17,10 +17,11 @@ namespace Sophie
         public Color inActiveColour = Color.white;
         //Sets the base of the moles as not active 
         public bool isActive = false;
+        //When the mole is idle for a certain time it changes location.
         public float activeTime = 2f;
         public float timer;
 
-
+        // after a certain time the mole will appear somewhere else.
         private void Update()
         {
             if(isActive)
@@ -42,13 +43,13 @@ namespace Sophie
 
         public void SetActive()
         {
-            // When this function is called set active 
+            // When this function is called, set active 
             isActive = true;
             IsActive();
         }
         public void SetInActive()
         {
-            // When this function is called saet inactive 
+            // When this function is called, set inactive 
             isActive = false;
             IsActive();
         }
@@ -59,6 +60,10 @@ namespace Sophie
             if (isActive)
             {
                 timer = activeTime;
+                if (activeTime > 0)
+                {
+                    uiImage.color = activeColour;
+                }
                 uiImage.color = activeColour;
                 return true;
             }
