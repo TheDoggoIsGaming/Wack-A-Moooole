@@ -11,19 +11,7 @@ namespace Lachlan
         {
 
         }
-        public void HighscoreCounter()
-        {
-
-        }
-        public void ScoreCounter()
-        {
-
-        }
-        public void UpdateScore()
-        {
-            score++;
-            scoreText.text = score.ToString();
-        }
+      
         #region Singleton
         public static UIHandler instance;
 
@@ -40,24 +28,24 @@ namespace Lachlan
         }
         #endregion
 
-        #region Variables
+       /* #region Variables
         public GameState currentState = GameState.PreGame;
         public float globalSpeed = 1.0f;
         public GameObject[] menuPanels = new GameObject[3];
 
         public int score = 0;
         public Text scoreText;
-        #endregion
+        #endregion*/
 
-        void SetMenuPanel()
+       /* void SetMenuPanel()
         {
             for (int i = 0; i < menuPanels.Length; i++)
             {
                 menuPanels[i].SetActive(false);
             }
             menuPanels[(int)currentState].SetActive(true);
-        }
-        public void SetState(GameState newState)
+        }*/
+       /* public void SetState(GameState newState)
         {
             currentState = newState;
 
@@ -75,18 +63,18 @@ namespace Lachlan
                     break;
             }
             SetMenuPanel();
-        }
-        public void RestartGame()
+        }*/
+       /* public void RestartGame()
         {
             SetState(GameState.PreGame);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        }*/
 
 
-        private void OnAwake()
+       /* private void OnAwake()
         {
             SetState(GameState.PreGame);
-        }
+        }*/
         public void ExitToDesktop()
         {
 #if UNITY_EDITOR
@@ -95,10 +83,10 @@ namespace Lachlan
             Application.Quit();
         }
     }
-    public enum GameState
+  /*  public enum GameState
     {
         PreGame,
         Game,
         PostGame,
-    }
+    }*/
 }
