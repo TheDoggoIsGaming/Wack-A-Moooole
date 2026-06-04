@@ -75,19 +75,19 @@ namespace Sophie
             {
                 //If it is hit while inactive colour changes to the miss color
                 uiImage.color = missColour;
+                Manager.instance.ScoreDown();
+
             }
             else
             {
                 // if it is hit while active color changes to the hit color
                 uiImage.color = hitColour;
+                //Score go up
+                Manager.instance.ScoreUp();
                 isActive = false;
                 timer = activeTime;
             }
 
-        }
-        public void Reinforcements()
-        {
-            
         }
         public void Missed()
         {
