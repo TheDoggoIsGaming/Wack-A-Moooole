@@ -1,4 +1,4 @@
-# Wack-A-Mole Project
+# Wack-A-Moooole
 >The objective of this project is to design and develop a small wack-a-mole style feature-complete prototype game on unity that simulates the classic core mechanic of wacking for  points. The game will also integrate essential gameplay systems such as player movement, camera control, dialogue interactions, menus, and a basic saving/loading system.
 ### Team Members
 1. Sophie as the director and author.
