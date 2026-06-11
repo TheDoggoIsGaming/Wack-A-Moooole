@@ -12,7 +12,11 @@ namespace Sophie
         public float currentNumber;
         //The text that this will effect
         public Text countDown;
+       
         //The text element countDown is held within the image CountDownHolder 
+        public Color difficulty1 = Color.black;
+        public Color difficulty2 = Color.orange;
+        public Color difficulty3 = Color.red;
 
 
         private void Awake()
@@ -36,6 +40,24 @@ namespace Sophie
         {
             //Calling the function to be used on an update 
             CountingDown();
+            TimerColor();
+            
+        }
+
+        public void TimerColor()
+        {
+            if (currentNumber <= 60 && currentNumber > 40)
+            {
+                countDown.color = difficulty1;
+            }
+            else if (currentNumber <= 40 && currentNumber > 20)
+            {
+                countDown.color = difficulty2;
+            }
+            else
+            {
+                countDown.color = difficulty3;
+            }
         }
 
         // Function to have a derease in time 

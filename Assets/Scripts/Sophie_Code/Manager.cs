@@ -16,6 +16,8 @@ namespace Sophie
         public Text scoreText;
         public float score;
         public float timer;
+        public float molesMissedCount;
+
         // left mouse click yellow mole = hit flashes green before turning back to base 
         private void Awake()
         {
@@ -77,6 +79,8 @@ namespace Sophie
                     RandomMole();
                 }
             }
+
+            
         }
 
 

@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -212,7 +212,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sophie.CountdownTimer
   countDownFrom: 60
+  currentNumber: 0
   countDown: {fileID: 260375225}
+  difficulty1: {r: 0, g: 0, b: 0, a: 1}
+  difficulty2: {r: 1, g: 0.6470588, b: 0, a: 1}
+  difficulty3: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &337271702
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +249,7 @@ RectTransform:
   m_Children:
   - {fileID: 1738579638}
   - {fileID: 1673317084}
+  - {fileID: 260375224}
   m_Father: {fileID: 419046460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

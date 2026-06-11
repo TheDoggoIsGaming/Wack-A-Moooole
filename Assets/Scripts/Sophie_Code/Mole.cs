@@ -20,6 +20,9 @@ namespace Sophie
         public float activeTime = 2f;
         public float timer;
         public float timerValue;
+       
+        
+
 
         private void Update()
         {
@@ -33,11 +36,11 @@ namespace Sophie
                 }
             }
             timerValue = CountdownTimer.countdownTimerInstance.currentNumber;
-            if (timerValue >= 60 && timerValue > 40)
+            if (timerValue <= 60 && timerValue > 40)
             {
                 activeTime = 2;
             }
-            else if (timerValue >= 40 && timerValue > 20)
+            else if (timerValue <= 40 && timerValue > 20)
             {
                 activeTime = 1.25f;
             }
@@ -91,8 +94,7 @@ namespace Sophie
             if (!isActive)
             {
                 //If it is hit while inactive colour changes to the miss color
-                uiImage.color = missColour;
-                Manager.instance.ScoreDown();
+                Missed();
 
             }
             else
@@ -108,9 +110,12 @@ namespace Sophie
         }
         public void Missed()
         {
-
             uiImage.color = missColour;
+            Manager.instance.molesMissedCount++;
+            Manager.instance.ScoreDown();
+
         }
+
     }
 
 }
