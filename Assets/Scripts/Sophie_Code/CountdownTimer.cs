@@ -13,6 +13,7 @@ namespace Sophie
         public Text countDown;
         //The text element countDown is held within the image CountDownHolder 
 
+
         //On enable instead of on start so that in theory it only begins when the HUB is on screen 
         void OnEnable()
         {
@@ -31,26 +32,39 @@ namespace Sophie
             // the current number is not equal to the time.deltaTime 
             currentNumber -= Time.deltaTime;
             //if the current number is equal or less than 0 Do;
-            if(currentNumber <= 0 )
+            if (currentNumber <= 0)
             {
                 //Current number equals zero, so if the current number would be less then 0 it stays at zero.
                 currentNumber = 0;
                 //End Game(not possible as of now). To be added with the addition of an end game screen. 
+            }
+            if (currentNumber <= 60 && currentNumber > 40)
+            {
+                Manager.instance.currentDifficulty = Manager.instance.DifficultyLevel1();
+            }
+            else if (currentNumber <= 40 && currentNumber > 20)
+            {
+                Manager.instance.currentDifficulty = Manager.instance.DifficultyLevel2();
+            }
+            else
+            {
+                Manager.instance.currentDifficulty = Manager.instance.DifficultyLevel3();
 
             }
             // minutes is equal to currentNumber divided by 60
             // Second is equal to currentNumber is the remainder of 60
             //Converts the value to minutes and seconds 
             int minutes = Mathf.FloorToInt(currentNumber / 60);
+
+
             int seconds = Mathf.FloorToInt(currentNumber % 60);
             //Updates the text element to display the current time in minutes and seconds. 
-            countDown.text = string.Format("{0:00}:{1:00}",minutes,seconds);
+            countDown.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            countDown.color = Manager.instance.currentDifficulty.colour;
         }
-        
-    }
 
-    
+    }
 }
-  
+
 
 

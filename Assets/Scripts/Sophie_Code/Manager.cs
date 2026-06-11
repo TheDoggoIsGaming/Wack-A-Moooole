@@ -7,6 +7,7 @@ namespace Sophie
 {
     public class Manager : MonoBehaviour
     {
+        public CountdownTimer countDownTimerScript;
         public static Manager instance;
         public Mole Mole;
         //Referencing the mole aray
@@ -16,6 +17,7 @@ namespace Sophie
         public Text scoreText;
         public int score;
         public float timer;
+        public Difficulty currentDifficulty;
         private void Awake()
         {
             if (instance == null)
@@ -30,6 +32,7 @@ namespace Sophie
 
         public void Start()
         {
+            currentDifficulty = DifficultyLevel1();
             // Plays the Random mole Function when game starts
             RandomMole();
             // Sets the score to 0 at the start of the game and updates the score display
@@ -63,6 +66,7 @@ namespace Sophie
 
         private void Update()
         {
+            int tempCount = currentDifficulty.count;
             // Selects a random mole to pop up and if the player clicks on the mole then it will flash green and if the player misses the mole it will flash red.
             if (moles[randomIndexValue].GetComponent<Mole>().isActive == false)
             {
@@ -78,13 +82,46 @@ namespace Sophie
                     RandomMole();
                 }
                 // If the mole is not active it will select a new random mole until it finds one that is active.
-                while (moles[randomIndexValue].GetComponent<Mole>().isActive == true)
+                while (tempCount > 0)
                 {
                     RandomMole();
+                    tempCount--;
                 }
             }
         }
 
+        public Difficulty DifficultyLevel1()
+        {
+            Difficulty difficulty = new Difficulty();
+            difficulty.colour = Color.black;
+            difficulty.count = 1;
+            difficulty.speed = 2f;
+            return difficulty;
+        }
 
+        public Difficulty DifficultyLevel2()
+        {
+            Difficulty difficulty = new Difficulty();
+            difficulty.colour = Color.orange;
+            difficulty.count = 1;
+            difficulty.speed = 1.25f;
+            return difficulty;
+        }
+        public Difficulty DifficultyLevel3()
+        {
+            Difficulty difficulty = new Difficulty();
+            difficulty.colour = Color.red;
+            difficulty.count = 2;
+            difficulty.speed = 0.75f;
+            return difficulty;
+        }
+        
     }
+}
+[System.Serializable]
+public struct Difficulty
+{
+    public Color colour;
+    public int count;
+    public float speed;
 }
