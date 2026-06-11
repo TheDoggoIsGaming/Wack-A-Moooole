@@ -2188,6 +2188,8 @@ MonoBehaviour:
   endScore: {fileID: 1191472383}
   highEndScore: {fileID: 1786611305}
   gameOver: 0
+  newHighScore: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  uiImage: {fileID: 679395400}
 --- !u!1 &1509760131
 GameObject:
   m_ObjectHideFlags: 0

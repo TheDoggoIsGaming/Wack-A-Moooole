@@ -8,11 +8,13 @@ namespace Lachlan
 {
     public class UIHandler : MonoBehaviour
     {
-
+        //Used to allow the different screen panels to show up
         public GameObject mainMenu, uiHUD, endScreen;
         public Text endScore;
         public Text highEndScore;
         public bool gameOver = false;
+        public Color newHighScore = Color.yellow;
+        public Image uiImage;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -43,7 +45,13 @@ namespace Lachlan
 #endif
             Application.Quit();
         }
-      
+        private void Update()
+        {
+            if (highEndScore != endScore)
+            {
+                uiImage.color = newHighScore;
+            }
+        }
         public void OpenMainMenu()
         {
             mainMenu.SetActive(true);
