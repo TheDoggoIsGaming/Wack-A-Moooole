@@ -5,6 +5,7 @@ namespace Sophie
 {
     public class CountdownTimer : MonoBehaviour
     {
+        public static CountdownTimer countdownTimerInstance;
         //the number that you are counting down form, the duration of the timer
         public float countDownFrom;
         // The number that the timer is currently at 
@@ -13,6 +14,18 @@ namespace Sophie
         public Text countDown;
         //The text element countDown is held within the image CountDownHolder 
 
+
+        private void Awake()
+        {
+            if (countdownTimerInstance == null)
+            {
+                countdownTimerInstance = this;
+            }
+            else if (countdownTimerInstance != null && countdownTimerInstance != this)
+            {
+                Destroy(this);
+            }
+        }
         //On enable instead of on start so that in theory it only begins when the HUB is on screen 
         void OnEnable()
         {
