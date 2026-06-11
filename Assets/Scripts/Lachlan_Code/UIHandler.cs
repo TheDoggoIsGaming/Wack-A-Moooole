@@ -1,17 +1,26 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Sophie;
+
 
 namespace Lachlan
 {
     public class UIHandler : MonoBehaviour
     {
+        //Used to allow the different screen panels to show up
+        public GameObject mainMenu, uiHUD, endScreen;
+        public Text endScore;
+        public Text highEndScore;
+        public bool gameOver = false;
+        public Color newHighScore = Color.yellow;
+        public Image uiImage;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
 
         }
-      
+
         #region Singleton
         public static UIHandler instance;
 
@@ -28,53 +37,7 @@ namespace Lachlan
         }
         #endregion
 
-       /* #region Variables
-        public GameState currentState = GameState.PreGame;
-        public float globalSpeed = 1.0f;
-        public GameObject[] menuPanels = new GameObject[3];
-
-        public int score = 0;
-        public Text scoreText;
-        #endregion*/
-
-       /* void SetMenuPanel()
-        {
-            for (int i = 0; i < menuPanels.Length; i++)
-            {
-                menuPanels[i].SetActive(false);
-            }
-            menuPanels[(int)currentState].SetActive(true);
-        }*/
-       /* public void SetState(GameState newState)
-        {
-            currentState = newState;
-
-            switch (currentState)
-            {
-                case GameState.PreGame:
-                    score = 0;
-                    globalSpeed = 0;
-                    break;
-                case GameState.Game:
-                    globalSpeed = 1.0f;
-                    break;
-                case GameState.PostGame:
-                    globalSpeed = 0;
-                    break;
-            }
-            SetMenuPanel();
-        }*/
-       /* public void RestartGame()
-        {
-            SetState(GameState.PreGame);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }*/
-
-
-       /* private void OnAwake()
-        {
-            SetState(GameState.PreGame);
-        }*/
+        //This code allows for the exit button in the main menu to let the user exit to desktop.
         public void ExitToDesktop()
         {
 #if UNITY_EDITOR
@@ -82,11 +45,32 @@ namespace Lachlan
 #endif
             Application.Quit();
         }
+        private void Update()
+        {
+            if (highEndScore != endScore)
+            {
+                uiImage.color = newHighScore;
+            }
+        }
+        public void OpenMainMenu()
+        {
+            mainMenu.SetActive(true);
+            uiHUD.SetActive(false);
+            endScreen.SetActive(false);
+            gameOver = false;
+        }
+        public void OpenUIHUD()
+        {
+            mainMenu.SetActive(false);
+            uiHUD.SetActive(true);
+            endScreen.SetActive(false);
+        }
+        public void OpenEndScreen()
+        {
+            mainMenu.SetActive(false);
+            uiHUD.SetActive(false);
+            endScreen.SetActive(true);
+            gameOver = true;
+        }
     }
-  /*  public enum GameState
-    {
-        PreGame,
-        Game,
-        PostGame,
-    }*/
 }
