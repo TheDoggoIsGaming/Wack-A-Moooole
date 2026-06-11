@@ -19,14 +19,16 @@ namespace Sophie
         public bool isActive = false;
         //When the mole is idle for a certain time it changes location.
         public int activeTime = 3;
+        // Timer to count down the time the mole is idle for.
         public float timer = 0;
-        public bool hit = true;
+        // When the mole is hit or missed it changes colour and the score goes up or down.
+        public bool hit = false;
         public bool missed = false;
 
-        // after a certain time the mole will appear somewhere else.
+        
         private void Update()
         {
-            // If the mole is active, the timer will count down. And if the timer reaches 0 and the player doesn't hit the mole it will miss otherwise its a hit.
+            // If the mole is active, the timer will count down. And if the timer reaches 0 and the player doesn't hit the mole it will miss otherwise it will hit.
             if (isActive)
             {
                 timer -= Time.deltaTime;
@@ -36,27 +38,20 @@ namespace Sophie
                     {
                         Missed();
                     }
-                }
-                if (timer <= -1)
-                {
-                    SetActive();
-                    timer = activeTime;
-                }
-            }
-            else if (!isActive)
-            {
-                timer -= Time.deltaTime;
-                if (timer <= 0)
-                {
-                    if (!missed)
+                    else
                     {
                         Hit();
                     }
-                }
-                if (timer <= -1)
-                {
-                    SetActive();
-                    timer = activeTime;
+                    if (timer <= -1)
+                    {
+                        SetActive();
+                        timer = activeTime;
+                    }
+                    else
+                    {
+                        SetInActive();
+                        timer = activeTime;
+                    }
                 }
             }
         }
@@ -71,6 +66,8 @@ namespace Sophie
         {
             // When this function is called, set active 
             isActive = true;
+            hit = true;
+            missed = true;
             IsActive();
         }
         public void SetInActive()
@@ -104,7 +101,9 @@ namespace Sophie
                 //If it is hit while inactive colour changes to the miss color
                 uiImage.color = missColour;
                 Manager.instance.ScoreDown(1);
-
+                isActive = true;
+                timer = activeTime;
+                hit = false;
             }
             else if (isActive && !missed)
             {
@@ -118,6 +117,7 @@ namespace Sophie
             }
 
         }
+        // these two functions are called when the timer runs out and the mole is missed or hit. It changes the colour and updates the score accordingly.
         public void Missed()
         {
             missed = true;
