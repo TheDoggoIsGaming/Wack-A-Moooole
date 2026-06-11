@@ -1,6 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Lachlan;
+
 
 
 namespace Sophie
@@ -9,7 +11,8 @@ namespace Sophie
     {
         public CountdownTimer countDownTimerScript;
         public static Manager instance;
-        public Mole Mole;
+        
+        public Mole MoleScript;
         //Referencing the mole aray
         public GameObject[] moles;
         // To see the random value within the inspecter
@@ -18,6 +21,8 @@ namespace Sophie
         public int score;
         public float timer;
         public Difficulty currentDifficulty;
+        bool triggered = false;
+        // left mouse click yellow mole = hit flashes green before turning back to base 
         private void Awake()
         {
             if (instance == null)
@@ -37,6 +42,7 @@ namespace Sophie
             RandomMole();
             // Sets the score to 0 at the start of the game and updates the score display
             UpdateScoreDisplay();
+            triggered = false;
         }
        public void ScoreUp(int value)
         {
@@ -55,7 +61,11 @@ namespace Sophie
             // Updates the score display by converting the score to a string and displaying it in the UI text element
             scoreText.text = score.ToString();
         }
-
+        public void UpdateFinalScore()
+        {
+            UIHandler.instance.highEndScore.text = scoreText.text;
+            UIHandler.instance.endScore.text = scoreText.text;
+        }
         // Selects a random mole from the mole array by selecting a value from the index. 
         // Changes the statis of the selected value into active.
         void RandomMole()
@@ -90,6 +100,11 @@ namespace Sophie
                     tempCount--;
                     //When the count is 1 one mole spawns, when its 2 two moles spawn
                 }
+            }
+            if (UIHandler.instance.gameOver && triggered == false)
+            {
+                UpdateFinalScore();
+                triggered = true;
             }
         }
 
