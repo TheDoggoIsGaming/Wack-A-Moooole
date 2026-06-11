@@ -11,6 +11,7 @@ namespace Sophie
         private float currentNumber;
         //The text that this will effect
         public Text countDown;
+        //The text element countDown is held within the image CountDownHolder 
 
         //On enable instead of on start so that in theory it only begins when the HUB is on screen 
         void OnEnable()
