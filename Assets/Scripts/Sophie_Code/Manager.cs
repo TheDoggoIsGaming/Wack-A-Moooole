@@ -93,8 +93,11 @@ namespace Sophie
         public Difficulty DifficultyLevel1()
         {
             Difficulty difficulty = new Difficulty();
+            //The colour for difficulty 1 is black 
             difficulty.colour = Color.black;
+            //The count of moles for difficulty 1 is 1
             difficulty.count = 1;
+            //The speed of difficulty 1 is 2
             difficulty.speed = 2f;
             return difficulty;
         }
@@ -102,16 +105,22 @@ namespace Sophie
         public Difficulty DifficultyLevel2()
         {
             Difficulty difficulty = new Difficulty();
+            //The colour for difficulty 2 is orange 
             difficulty.colour = Color.orange;
+            //The count of moles for difficulty 2 is 1
             difficulty.count = 1;
+            //The speed of difficulty 2 is 1.25
             difficulty.speed = 1.25f;
             return difficulty;
         }
         public Difficulty DifficultyLevel3()
         {
             Difficulty difficulty = new Difficulty();
+            //The colour for difficulty 3 is Red
             difficulty.colour = Color.red;
+            //The count of moles for difficulty 3 is 2
             difficulty.count = 2;
+            //The speed for difficulty 3 is 0.75
             difficulty.speed = 0.75f;
             return difficulty;
         }
