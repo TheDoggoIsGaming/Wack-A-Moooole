@@ -8,7 +8,7 @@ namespace Sophie
         //the number that you are counting down form, the duration of the timer
         public float countDownFrom;
         // The number that the timer is currently at 
-        private float currentNumber;
+        public float currentNumber;
         //The text that this will effect
         public Text countDown;
         //The text element countDown is held within the image CountDownHolder 
@@ -33,7 +33,7 @@ namespace Sophie
             //if the current number is equal or less than 0 Do;
             if(currentNumber <= 0 )
             {
-                //Current number equals zero, so if the current number would be less then 0 it stays at zero.
+                //Current number equa ls zero, so if the current number would be less then 0 it stays at zero.
                 currentNumber = 0;
                 //End Game(not possible as of now). To be added with the addition of an end game screen. 
 

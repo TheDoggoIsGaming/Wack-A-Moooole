@@ -5,6 +5,7 @@ namespace Sophie
 {
     public class Mole : MonoBehaviour
     {
+        public CountdownTimer countdownTimerScript;
         // Telling the code to access the sprite renderer 
         public Image uiImage;
         //When a mole is active it is yellow
@@ -32,6 +33,10 @@ namespace Sophie
                     timer = activeTime;
                 }
             }
+           // We want to reference the currentNumber in CountDownTimerScript 
+           //if currentNumber = +20 (every 20 seconds)
+           // activeTime is /2
+
         }
         public void ToggleIsActive()
         {
