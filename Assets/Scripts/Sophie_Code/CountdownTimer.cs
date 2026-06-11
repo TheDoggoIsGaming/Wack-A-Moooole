@@ -39,15 +39,19 @@ namespace Sophie
                 //End Game(not possible as of now). To be added with the addition of an end game screen. 
             }
             if (currentNumber <= 60 && currentNumber > 40)
+
             {
+                //I the first 20 seconds of the game it is set two difficulty 1 
                 Manager.instance.currentDifficulty = Manager.instance.DifficultyLevel1();
             }
             else if (currentNumber <= 40 && currentNumber > 20)
             {
+                //After 20 Seconds difficulty is set to difficulty 2 
                 Manager.instance.currentDifficulty = Manager.instance.DifficultyLevel2();
             }
             else
             {
+                //After 40 seconds the difficulty is set to 3
                 Manager.instance.currentDifficulty = Manager.instance.DifficultyLevel3();
 
             }
@@ -60,6 +64,7 @@ namespace Sophie
             int seconds = Mathf.FloorToInt(currentNumber % 60);
             //Updates the text element to display the current time in minutes and seconds. 
             countDown.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            //The colour of the countdown text is the same as the difficulty it is currently. 
             countDown.color = Manager.instance.currentDifficulty.colour;
         }
 

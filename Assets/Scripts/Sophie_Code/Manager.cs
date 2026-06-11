@@ -82,10 +82,13 @@ namespace Sophie
                     RandomMole();
                 }
                 // If the mole is not active it will select a new random mole until it finds one that is active.
+                //Only if the temp count is more then zero
                 while (tempCount > 0)
                 {
                     RandomMole();
+                    //-1 to that count 
                     tempCount--;
+                    //When the count is 1 one mole spawns, when its 2 two moles spawn
                 }
             }
         }
@@ -127,7 +130,11 @@ namespace Sophie
         
     }
 }
+//Makes it visible in the inspector.
 [System.Serializable]
+
+//Holds a small amount of data and organizes
+//For referenccing between scripts. 
 public struct Difficulty
 {
     public Color colour;
