@@ -94,6 +94,11 @@ MonoBehaviour:
   missColour: {r: 1, g: 0, b: 0, a: 1}
   hitColour: {r: 0, g: 1, b: 0, a: 1}
   inActiveColour: {r: 1, g: 1, b: 1, a: 1}
+  isActive: 0
+  activeTime: 3
+  timer: 3
+  hit: 0
+  missed: 0
 --- !u!114 &6926992019563473893
 MonoBehaviour:
   m_ObjectHideFlags: 0
