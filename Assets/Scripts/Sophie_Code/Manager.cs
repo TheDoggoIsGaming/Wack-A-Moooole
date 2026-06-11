@@ -1,6 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Lachlan;
+
 
 
 namespace Sophie
@@ -8,6 +10,7 @@ namespace Sophie
     public class Manager : MonoBehaviour
     {
         public static Manager instance;
+        
         public Mole MoleScript;
         //Referencing the mole aray
         public GameObject[] moles;
@@ -16,6 +19,7 @@ namespace Sophie
         public Text scoreText;
         public float score;
         public float timer;
+        bool triggered = false;
         // left mouse click yellow mole = hit flashes green before turning back to base 
         private void Awake()
         {
@@ -36,6 +40,7 @@ namespace Sophie
             RandomMole();
 
             UpdateScoreDisplay();
+            triggered = false;
         }
        public void ScoreUp()
         {
@@ -51,7 +56,11 @@ namespace Sophie
         {
             scoreText.text = score.ToString();
         }
-
+        public void UpdateFinalScore()
+        {
+            UIHandler.instance.highEndScore.text = scoreText.text;
+            UIHandler.instance.endScore.text = scoreText.text;
+        }
         // Selects a random mole from the mole array by selecting a value from the index. 
         // Changes the statis of the selected value into active.
         void RandomMole()
@@ -76,6 +85,11 @@ namespace Sophie
                     }
                     RandomMole();
                 }
+            }
+            if (UIHandler.instance.gameOver && triggered == false)
+            {
+                UpdateFinalScore();
+                triggered = true;
             }
         }
 

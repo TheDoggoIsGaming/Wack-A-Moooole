@@ -2185,6 +2185,9 @@ MonoBehaviour:
   mainMenu: {fileID: 294576770}
   uiHUD: {fileID: 873424433}
   endScreen: {fileID: 2116471314}
+  endScore: {fileID: 1191472383}
+  highEndScore: {fileID: 1786611305}
+  gameOver: 0
 --- !u!1 &1509760131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,7 +2579,7 @@ GameObject:
   - component: {fileID: 1786611306}
   - component: {fileID: 1786611305}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: HighEndScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2741,7 +2744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2116471315
 RectTransform:
   m_ObjectHideFlags: 0

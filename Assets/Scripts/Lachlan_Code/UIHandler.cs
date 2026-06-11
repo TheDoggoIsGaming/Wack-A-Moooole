@@ -10,6 +10,9 @@ namespace Lachlan
     {
 
         public GameObject mainMenu, uiHUD, endScreen;
+        public Text endScore;
+        public Text highEndScore;
+        public bool gameOver = false;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -40,11 +43,13 @@ namespace Lachlan
 #endif
             Application.Quit();
         }
+      
         public void OpenMainMenu()
         {
             mainMenu.SetActive(true);
             uiHUD.SetActive(false);
             endScreen.SetActive(false);
+            gameOver = false;
         }
         public void OpenUIHUD()
         {
@@ -57,6 +62,7 @@ namespace Lachlan
             mainMenu.SetActive(false);
             uiHUD.SetActive(false);
             endScreen.SetActive(true);
+            gameOver = true;
         }
     }
 }
