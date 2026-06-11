@@ -42,12 +42,6 @@ namespace Sophie
             }
             manager.moles = moles;
         }
-
-
-
-
-
-
     }
 }
 
