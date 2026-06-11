@@ -17,7 +17,7 @@ namespace Sophie
         // To see the random value within the inspecter
         [SerializeField] int randomIndexValue;
         public Text scoreText;
-        public float score;
+        public int score;
         public float timer;
         bool triggered = false;
         // left mouse click yellow mole = hit flashes green before turning back to base 
@@ -32,28 +32,30 @@ namespace Sophie
                 Destroy(gameObject);
             }
         }
-        // Clicking a mole that isnt yellow = miss flashes red before turning back to base
 
         public void Start()
         {
             // Plays the Random mole Function when game starts
             RandomMole();
-
+            // Sets the score to 0 at the start of the game and updates the score display
             UpdateScoreDisplay();
             triggered = false;
         }
-       public void ScoreUp()
+       public void ScoreUp(int value)
         {
-            score++;
+            // When the player hits a mole the score goes up and updates the score display
+            score+= value;
             UpdateScoreDisplay();
         }
-        public void ScoreDown()
+        public void ScoreDown(int value)
         {
-            score --;
+            // When the player misses a mole the score goes down and updates the score display
+            score-= value;
             UpdateScoreDisplay();
         }
         void UpdateScoreDisplay()
         {
+            // Updates the score display by converting the score to a string and displaying it in the UI text element
             scoreText.text = score.ToString();
         }
         public void UpdateFinalScore()
@@ -74,15 +76,20 @@ namespace Sophie
             // Selects a random mole to pop up and if the player clicks on the mole then it will flash green and if the player misses the mole it will flash red.
             if (moles[randomIndexValue].GetComponent<Mole>().isActive == false)
             {
-                // currently it changes colour at a certain time but it needs to change colour when the player clicks or misses the mole.
+                // at a certain time it spawns in a mole.
                 timer += Time.deltaTime;
-                if(timer >= 1f)
+                if (timer >= 3f)
                 {
-                    timer = 0;
+                    timer = 0f;
                     foreach (GameObject mole in moles)
                     {
                         mole.GetComponent<Mole>().SetInActive();
                     }
+                    RandomMole();
+                }
+                // If the mole is not active it will select a new random mole until it finds one that is active.
+                while (moles[randomIndexValue].GetComponent<Mole>().isActive == true)
+                {
                     RandomMole();
                 }
             }
