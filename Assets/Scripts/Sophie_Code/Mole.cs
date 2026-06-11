@@ -26,8 +26,8 @@ namespace Sophie
         // after a certain time the mole will appear somewhere else.
         private void Update()
         {
-            //
-            if(isActive)
+            // If the mole is active, the timer will count down. And if the timer reaches 0 and the player doesn't hit the mole it will miss otherwise its a hit.
+            if (isActive)
             {
                 timer -= Time.deltaTime;
                 if (timer <= 0)
@@ -35,7 +35,23 @@ namespace Sophie
                     if (!hit)
                     {
                         Missed();
-                    } 
+                    }
+                }
+                if (timer <= -1)
+                {
+                    SetActive();
+                    timer = activeTime;
+                }
+            }
+            else if (!isActive)
+            {
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    if (!missed)
+                    {
+                        Hit();
+                    }
                 }
                 if (timer <= -1)
                 {
@@ -88,9 +104,9 @@ namespace Sophie
                 //If it is hit while inactive colour changes to the miss color
                 uiImage.color = missColour;
                 Manager.instance.ScoreDown(1);
-               
+
             }
-            else if(isActive && !missed)
+            else if (isActive && !missed)
             {
                 // if it is hit while active color changes to the hit color
                 uiImage.color = hitColour;
@@ -108,6 +124,11 @@ namespace Sophie
             uiImage.color = missColour;
             Manager.instance.ScoreDown(1);
         }
+        public void Hit()
+        {
+            hit = true;
+            uiImage.color = hitColour;
+            Manager.instance.ScoreUp(1);
+        }
     }
-
 }
