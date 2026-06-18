@@ -245,6 +245,7 @@ RectTransform:
   m_Children:
   - {fileID: 1738579638}
   - {fileID: 1673317084}
+  - {fileID: 260375224}
   m_Father: {fileID: 419046460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -658,12 +659,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a13465cd8749043be189e996a07067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Manager
-  Mole: {fileID: 0}
+  countDownTimerScript: {fileID: 260375227}
+  MoleScript: {fileID: 7063165826487077469, guid: bb647af616887184b9d58e885dda122a, type: 3}
   moles: []
   randomIndexValue: 1
   scoreText: {fileID: 1673317085}
   score: 0
   timer: 1
+  currentDifficulty:
+    colour: {r: 0, g: 0, b: 0, a: 0}
+    count: 0
+    speed: 0
 --- !u!1 &1673317083
 GameObject:
   m_ObjectHideFlags: 0
