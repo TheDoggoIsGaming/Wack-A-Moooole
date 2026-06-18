@@ -3,8 +3,7 @@
 ### Team Members
 1. Sophie as the director and author.
 2. Tylor as the core game developer.
-3. Lacklan as the GUI/UI and HUD developer.
-4. Kurtis as the technical developer.
+3. Lachlan as the GUI/UI and HUD developer.
 ### Branching Naming Conventions
 When working with GitHub, using consistent naming conventions for branches can improve collaboration and maintain clarity in your version control workflow. Here are some commonly followed naming conventions for branches:
 
