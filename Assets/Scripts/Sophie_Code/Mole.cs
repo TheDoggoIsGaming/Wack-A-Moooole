@@ -105,6 +105,7 @@ namespace Sophie
                 isActive = true;
                 timer = activeTime;
                 hit = false;
+                missed = true;
             }
             else if (isActive && !missed)
             {
@@ -115,6 +116,7 @@ namespace Sophie
                 isActive = false;
                 timer = activeTime;
                 hit = true;
+                missed = false;
             }
 
         }
