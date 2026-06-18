@@ -21,6 +21,7 @@ namespace Sophie
         public int activeTime = 3;
         // Timer to count down the time the mole is idle for.
         public float timer = 0;
+        public CountdownTimer countdownTimer;
         // When the mole is hit or missed it changes colour and the score goes up or down.
         public bool hit = false;
         public bool missed = false;
