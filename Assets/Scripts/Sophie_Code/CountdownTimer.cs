@@ -14,6 +14,7 @@ namespace Sophie
         public Text countDown;
         //The text element countDown is held within the image CountDownHolder 
 
+
         //On enable instead of on start so that in theory it only begins when the HUB is on screen 
         void OnEnable()
         {
@@ -48,6 +49,8 @@ namespace Sophie
             // Second is equal to currentNumber is the remainder of 60
             //Converts the value to minutes and seconds 
             int minutes = Mathf.FloorToInt(currentNumber / 60);
+
+
             int seconds = Mathf.FloorToInt(currentNumber % 60);
             //Updates the text element to display the current time in minutes and seconds. 
             countDown.text = string.Format("{0:00}:{1:00}", minutes, seconds);
